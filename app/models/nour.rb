@@ -1,0 +1,2 @@
+class Nour < ApplicationRecord
+end

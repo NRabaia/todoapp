@@ -1,0 +1,29 @@
+<h1>Edit Home</h1>
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
+<p>
+ name: <%= @todo.name %>
+</p>
+<p>
+ description : <%= @todo.description %>
+</p>
+
+
+
+<%= form_for @todo do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+  
+  <p>
+    <%= f.label :description %> <br>
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+  
+<% end %>

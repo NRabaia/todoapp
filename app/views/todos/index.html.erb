@@ -1,0 +1,44 @@
+
+<p> <%= link_to "Add new todo", new_todo_path  %> </p>
+
+<div class = "m-3">
+ <div class="container">
+   <div class="row">
+     <div class="col">
+       <div class ="table-responsive">
+        <table class="table table-hover table-bordered align-middle">
+         <thead class="table-dark">
+          <tr>
+           <th scope="col">#</th>
+           <th scope="col">Name</th>
+           <th scope="col">description</th>
+           <th scope="col">show</th>
+           <th scope="col">edit</th>
+          </tr>
+         </thead>
+         <tbody>
+          <% @todos.each do |todo| %>
+          <tr>
+           <th scope="row"><%= todo.id %></th>
+           <td> 
+           <%= todo.name %>
+           </td> 
+           <td>
+           <%= todo.description %>
+           </td> 
+           <td>
+            <p> <%= link_to "Show todo", todo_path(todo)  %> </p>
+           </td> 
+           <td>
+            <p> <%= link_to "Edit todo", edit_todo_path(todo)  %> </p>
+           </td> 
+          </tr>
+          <% end %>
+         </tbody>
+       </table>
+      </div> 
+     </div>
+   </div>
+ </div>
+</div>
+

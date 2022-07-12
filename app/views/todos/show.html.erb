@@ -3,6 +3,9 @@
   <div class="notice"><%= flash[:notice] %></div>
 <% end %>
 
+<p> <%= link_to "Go to the todos list", todos_path  %> </p>
+<p> <%= link_to "Edit this todo", edit_todo_path(@todo)  %> </p>
+
 <p>
  name: <%= @todo.name %>
 </p>

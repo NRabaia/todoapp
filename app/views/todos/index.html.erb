@@ -14,6 +14,7 @@
            <th scope="col">description</th>
            <th scope="col">show</th>
            <th scope="col">edit</th>
+           <th scope="col">distroy</th>
           </tr>
          </thead>
          <tbody>
@@ -27,10 +28,13 @@
            <%= todo.description %>
            </td> 
            <td>
-            <p> <%= link_to "Show todo", todo_path(todo)  %> </p>
+            <button type="button" class="btn btn-outline-info" ><%= link_to "Show todo", todo_path(todo)  %> </button>
            </td> 
            <td>
-            <p> <%= link_to "Edit todo", edit_todo_path(todo)  %> </p>
+            <button type="button" class="btn btn-outline-info" > <%= link_to "Edit todo", edit_todo_path(todo)  %></button>
+           </td> 
+           <td>
+            <button type="button" class="btn btn-outline-info" ><%= link_to "Distroy todo", todo_path(todo), method: :delete, data: {confirm: "Are you sure ?"}  %></button>
            </td> 
           </tr>
           <% end %>
